@@ -1,0 +1,343 @@
+/* CSS Document */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+@font-face {
+  font-family: Marion;
+  src: url(font/MarionRegular.ttf);
+}
+
+:root {
+  --bgColor:#E5E3D5;
+  --accentText: #8C918A;
+  --mainColor: #313F3F;
+  --headerColor: #FFFDFC;
+}
+
+  /**********/
+ /* HEADER */
+/**********/
+
+header{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  justify-content: center;
+  text-align: center;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+  /********/
+ /* MENU */
+/********/
+
+button{
+  background:none;
+  border:none;
+}
+
+.hamburger{
+  width: 40px;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--mainColor);
+  transition: all 1s ease-in-out;
+  position: absolute;
+  top: 2em;
+  right: 1em;
+}
+.hamburger::before, .hamburger::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--mainColor);
+  transition: all 1s ease-in-out;
+}
+.hamburger::before{
+  transform: translateY(-10px);
+}
+.hamburger::after{
+  transform: translateY(10px);
+}
+
+header nav ul{
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 2s;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+header nav ul li{
+  flex-direction: column;
+}
+
+header nav ul.oop{
+  opacity: 1;
+}
+
+/* ANIMATIE */
+
+.hamburger.open{
+  transform: translateX(-40px);
+  background: transparent;
+}
+.hamburger.open::before{
+  transform: rotate(45deg) translate(30px, -30px);
+}
+.hamburger.open::after{
+  transform: rotate(-45deg) translate(30px, 30px);
+}
+
+ul:nth-of-type(1){
+  display:flex;
+  grid-gap:2em;
+  margin:0; padding:0;
+  list-style:none;
+  align-items: stretch; 
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  top: 5em;
+}
+  /*********/
+ /*  HOME */
+/*********/
+
+body#home{
+  width: 100vw;
+  background-image: url('../images/headerbg.jpeg');
+  background-repeat: no-repeat;
+  background-color: var(--bgColor);
+  font-family: Marion;
+  color: var(--mainColor);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/************/
+
+#home section ul p{
+  color: var(--accentText);
+}
+
+#home section ul p:first-of-type{
+  font-size: 1.2em;
+}
+
+#home section ul p:last-of-type{
+  font-size: .7em;
+}
+
+
+/* STYLING BOVENSTE DEEL SITE */
+#home section.top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7em;
+  padding-bottom: 10em;
+  /*position: absolute;
+  /* top: 10em;*/ */
+}
+#home .top img{
+  max-width: 80%;
+  margin: 1em;
+}
+
+#home nav img{
+
+  margin: 10px;
+}
+
+#home a{
+  color: var(--mainColor);
+  text-decoration: none;
+}
+
+#home ul a{
+  display: flex;
+  list-style:none;
+  width: 100%;
+  line-height: 1.5em;
+  padding: .5em;
+  text-decoration: none;
+}
+
+#home li { 
+  width: 40%;
+}
+#home .merch img{
+  width: 100%;
+}
+
+#home .merch{
+  margin: 1em;
+}
+
+#home .merch li{
+  text-align: center;
+  padding: 1em;
+}
+
+#home iframe{
+  max-width: 80%;
+}
+
+#home section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#home h2{
+  text-align: center;
+  color: var(--headerColor);
+  background-color: var(--mainColor);
+  padding: .2em 1em .2em 1em;
+  display: inline-block;
+  font-size: 2em;
+  
+}
+
+#home footer ul{
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+
+/* STATES */ 
+
+button:focus{
+  background-color: red;
+}
+
+#home a:focus{
+  background-color: var(--mainColor);
+  color: var(--headerColor);
+  padding: 0.5em;
+  border: none;
+}
+#home a:hover{
+  background-color: var(--mainColor);
+  color: var(--headerColor);
+  padding: 1 1 1 1em;
+  border: none;
+}
+#home a:active{
+  background-color: var(--mainColor);
+  color: var(--headerColor);
+  padding: 0.5em 1em 0.5em 1em;
+  border: none;
+  text-decoration: underline;
+}
+
+/* media queries */
+
+
+
+
+  /*********/
+ /*  TOUR */
+/*********/
+
+body#tour{
+  background-color: var(--bgColor);
+}
+
+#tour article a{
+  border: 1px solid var(--mainColor);
+  padding: .75em;
+  color: var(--mainColor);
+  text-decoration: none;
+}
+
+#tour article p{
+  color: var(--accentText);
+}
+
+/* STATES */
+
+#tour a:hover{
+  background-color: var(--mainColor);
+  color: var(--headerColor);
+}
+#tour a:focus{
+  background-color: var(--mainColor);
+  color: var(--headerColor);
+}
+#tour a:active{
+  background-color: var(--mainColor);
+  color: var(--headerColor);
+  text-decoration: underline;
+}
+
+/* media queries */
+
+@media (min-width:100px){
+  #home .merch li{
+    width: 100%;
+    }
+  }
+
+@media (min-width:425px){
+  #home .merch li{
+    width: 50%;
+    }
+  }
+
+@media (min-width:525px){
+  #home .merch li{
+    width: 30%;
+    flex-direction: row;
+    }
+  #home .top img{
+    width: 30%;
+  }
+  #home .top div{
+    display: flex;
+    flex-direction: column;
+  }
+  #home section.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
+  #home .hamburger{
+    display: none;
+  }
+  #home header nav ul{
+    opacity: 1;
+    flex-direction: row;
+    top: 1em;
+  }
+  #home h1{
+    justify-content: flex-start;
+    left: 1em;
+  }
+}
